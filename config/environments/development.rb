@@ -73,4 +73,7 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+  FLICKR_API_KEY = "23608d25a46231dfa285de4e03836ffe"
+  FLICKR_SHARED_SECRET = "04552de5d69ed056"
+
 end
