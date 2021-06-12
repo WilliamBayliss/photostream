@@ -1,7 +1,18 @@
 <div>
-    <%= form_with do |form| %>
-        <%= form.label :user_id %>
-        <%= form.text_field :user_id %>
-        <%= form.submit %>
+
+    <% if @photostream %>
+        <% @photostream.each do |photo| %>
+            
+            <% imgSrc = "https://live.staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg" %>
+            <%= image_tag(imgSrc) %>
+        <% end %>
+    <% else %>
+
+        <%= form_with method: :get do |form| %>
+            <%= form.label :flickr_user_id %>
+            <%= form.text_field :flickr_user_id %>
+            <%= form.submit %>
+        <% end %>
+
     <% end %>
 </div>
